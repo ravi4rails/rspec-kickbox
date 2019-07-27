@@ -6,14 +6,14 @@ RSpec.describe Post, type: :model do
   end
 
   it 'is invalid without title' do
-    FactoryGirl.build(:post, :title).should be_valid
+    FactoryGirl.build(:post, title: nil).should_not be_valid
   end
 
   it 'is invalid without body' do
-    FactoryGirl.build(:post, :body).should be_valid
+    FactoryGirl.build(:post, body: nil).should_not be_valid
   end
 
   it 'is invalid without image' do
-    FactoryGirl.build(:post, :image).should be_valid
+    FactoryGirl.build(:post, image: nil).should_not be_valid
   end
 end
